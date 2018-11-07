@@ -9,9 +9,15 @@ import java.util.Random;
 public class Roulette {
     private ArrayList<Player> players;
     private Player starter;
+    private int rounds;
     public Roulette(Player starter){
         this.starter = starter;
         players = new ArrayList<>();
+    }
+    //this could be used to have more than one rounds, the default being moving but optional extra rounds.
+    public Roulette(Player starter, int rounds){
+        this(starter);
+        this.rounds = rounds;
     }
 
 
@@ -26,7 +32,7 @@ public class Roulette {
                 p.sendMessage("Bang!");
                 break;
             }else{
-                p.sendMessage("Click!");
+                p.sendMessage("Click! You've survived this round!");
             }
         }
         return true;
@@ -50,4 +56,7 @@ public class Roulette {
             return true;
         }
     }
+
+    //Could be used to add stakes to the randomness ;-;
+    //public void addBet(){}
 }

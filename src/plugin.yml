@@ -12,3 +12,6 @@ commands:
   rrStart:
     description: Starts a roulette that you have created.
     usage: /rrStart
+  rrRemove:
+    description: Starts a roulette that you have created.
+    usage: /rrRemove [Player Name]

@@ -1,6 +1,8 @@
 package me.kayde.plugin.Managers;
 
 import java.util.ArrayList;
+
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class RouletteManager {
@@ -33,6 +35,17 @@ public class RouletteManager {
             getRoutlette(player).Start();
             return true;
         }
+        return false;
+    }
+
+    public boolean removeRoulette(Player player){
+        if(roulettes.remove(getRoutlette(player))){
+            for(Player p: Bukkit.getOnlinePlayers()){
+                p.sendMessage(player + "'s Roulette has been canceled :(");
+            }
+            return true;
+        }
+        player.sendMessage("Roulette does not exist!");
         return false;
     }
 
