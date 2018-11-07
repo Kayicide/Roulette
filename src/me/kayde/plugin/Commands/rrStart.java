@@ -7,9 +7,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class RRStart implements CommandExecutor {
+public class rrStart implements CommandExecutor {
     TestingSkills plugin;
-    public RRStart(TestingSkills plugin) {
+    public rrStart(TestingSkills plugin) {
         this.plugin = plugin;
     }
 
@@ -19,10 +19,9 @@ public class RRStart implements CommandExecutor {
         if(!(commandSender instanceof Player))
             return false;
         Player player = (Player)commandSender;
-        Roulette temp;
-        if((temp = plugin.rrManager.getRoutlette(player)) != null){
-            temp.Start();
-        }
+        if(plugin.rrManager.startRoulette(player) == true)
+            return true;
+        player.sendMessage("You have not created a roulette yet!");
         return false;
     }
 }

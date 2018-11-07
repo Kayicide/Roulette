@@ -9,3 +9,6 @@ commands:
   rrJoin:
     description: Joins a roulette started by the player.
     usage: /rrJoin [Player Name]
+  rrStart:
+    description: Starts a roulette that you have created.
+    usage: /rrStart
