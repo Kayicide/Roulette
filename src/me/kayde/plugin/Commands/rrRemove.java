@@ -19,7 +19,7 @@ public class rrRemove implements CommandExecutor{
         Player player = (Player)commandSender;
 
 
-        if(args[0].isEmpty()){
+        if(args.length == 0){
             if(plugin.rrManager.removeRoulette(player))
               return true;
             player.sendMessage("You have not started a roulette yet!");
@@ -28,10 +28,6 @@ public class rrRemove implements CommandExecutor{
                 return true;
             player.sendMessage("That player has not started a roulette yet!");
         }
-
-
-
-
         return false;
     }
 }

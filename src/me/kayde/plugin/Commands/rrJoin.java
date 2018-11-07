@@ -18,7 +18,7 @@ public class rrJoin implements CommandExecutor {
             return false;
         Player player = (Player)commandSender;
         Player found;
-        if((found = Bukkit.getServer().getPlayer(args[0])) != null){
+        if(((found = Bukkit.getServer().getPlayer(args[0])) != null) && plugin.rrManager.getRoutlette(found) != null){
             plugin.rrManager.getRoutlette(found).addPlayer(player);
             player.sendMessage("You have joined " + args[0] + "'s Roulette. Good Luck!");
             return true;

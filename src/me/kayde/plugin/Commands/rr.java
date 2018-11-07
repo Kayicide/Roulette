@@ -23,15 +23,17 @@ public class rr implements CommandExecutor {
             return false;
         Player player = (Player)commandSender;
 
-        plugin.rrManager.createRoulette(player);
-
-        //Sets up the chat commands which is clickable(not finished the join command that it triggers)
-        TextComponent announcement1 = new TextComponent(player.getDisplayName() +  " has started a roulette! Click This Message to Join!");
-        announcement1.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/rrJoin " + player.getName()));
-        //send the message to all players on the server
-        for(Player p: Bukkit.getOnlinePlayers()){
-            p.spigot().sendMessage(announcement1);
+        if(plugin.rrManager.createRoulette(player) == true){
+            //Sets up the chat commands which is clickable(not finished the join command that it triggers)
+            TextComponent announcement1 = new TextComponent(player.getDisplayName() +  " has started a roulette! Click This Message to Join!");
+            announcement1.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/rrJoin " + player.getName()));
+            //send the message to all players on the server
+            for(Player p: Bukkit.getOnlinePlayers()){
+                p.spigot().sendMessage(announcement1);
+            }
+            return true;
         }
-        return true;
+        player.sendMessage("You already have a roulette running!");
+        return false;
     }
 }
