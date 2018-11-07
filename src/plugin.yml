@@ -1,0 +1,11 @@
+name: meme
+version: 0.001
+author: Scarlett
+main: me.kayde.plugin.TestingSkills
+commands:
+  rr:
+    description: Start The Memes
+    usage: /rr
+  rrJoin:
+    description: Joins a roulette started by the player.
+    usage: /rrJoin [Player Name]

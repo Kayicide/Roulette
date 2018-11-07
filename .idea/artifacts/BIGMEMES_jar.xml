@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BIGMEMES:jar">
+    <output-path>$USER_HOME$/Desktop/MINECRAFT SERVER NEW/plugins</output-path>
+    <root id="archive" name="BIGMEMES.jar">
+      <element id="module-output" name="BIGMEMES" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/spigot-1.13.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
