@@ -17,14 +17,13 @@ public class rrJoin implements CommandExecutor {
         if(!(commandSender instanceof Player))
             return false;
         Player player = (Player)commandSender;
-
-        for(Player p: Bukkit.getOnlinePlayers()){
-            if(player.getDisplayName().equals(args[0])){
-                plugin.rrManager.getRoutlette(p).addPlayer(player);
-                player.sendMessage("You have joined " + args[0] + "'s Roulette. Good Luck!");
-                return true;
-            }
+        Player found;
+        if((found = Bukkit.getServer().getPlayer(args[0])) != null){
+            plugin.rrManager.getRoutlette(found).addPlayer(player);
+            player.sendMessage("You have joined " + args[0] + "'s Roulette. Good Luck!");
+            return true;
         }
+        player.sendMessage("This roulette was not found!");
         return false;
     }
 }

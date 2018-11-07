@@ -1,6 +1,7 @@
 package me.kayde.plugin;
 
 import me.kayde.plugin.Commands.rr;
+import me.kayde.plugin.Commands.rrJoin;
 import me.kayde.plugin.Managers.RouletteManager;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -28,6 +29,7 @@ public class TestingSkills extends JavaPlugin {
 
     public void registerCommands(){
         getCommand("rr").setExecutor(new rr(this));
+        getCommand("rrJoin").setExecutor(new rrJoin(this));
     }
 
 
