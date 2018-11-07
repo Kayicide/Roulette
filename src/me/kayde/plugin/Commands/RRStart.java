@@ -1,5 +1,6 @@
 package me.kayde.plugin.Commands;
 
+import me.kayde.plugin.Managers.Roulette;
 import me.kayde.plugin.TestingSkills;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,10 +19,10 @@ public class RRStart implements CommandExecutor {
         if(!(commandSender instanceof Player))
             return false;
         Player player = (Player)commandSender;
-
-
-
-
+        Roulette temp;
+        if((temp = plugin.rrManager.getRoutlette(player)) != null){
+            temp.Start();
+        }
         return false;
     }
 }

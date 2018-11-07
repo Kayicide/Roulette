@@ -4,6 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Roulette {
     private ArrayList<Player> players;
@@ -15,12 +16,19 @@ public class Roulette {
 
 
     public boolean Start(){
+        Random random = new Random();
 
-
-
-        //do the killing
-
-
+        int i;
+        for(Player p: players){
+            i = random.nextInt(6) + 1;
+            if(i == 1){
+                p.setHealth(0.0);
+                p.sendMessage("Bang!");
+                break;
+            }else{
+                p.sendMessage("Click!");
+            }
+        }
         return true;
     }
 
